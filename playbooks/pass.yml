@@ -1,0 +1,8 @@
+- hosts: localhost
+  become: yes
+  become_user: root
+  gather_facts: false
+  roles:
+    - role: ../roles/demo
+      tags:
+        - demo

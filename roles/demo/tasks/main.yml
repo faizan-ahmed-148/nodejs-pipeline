@@ -1,0 +1,42 @@
+- name: Git Config Safe Directory
+  shell: git config --global --add safe.directory /applications/backend
+  args:
+    chdir: /applications/backend
+  
+    # replace 'root' with the correct root user
+
+- name: Git Fetch
+  shell: git fetch
+  args:
+    chdir: /applications/backend/
+  
+  
+
+- name: Git Stash
+  shell: git stash
+  args:
+    chdir: /applications/backend/
+  
+  
+
+- name: Git Pull
+  shell: git pull
+  args:
+    chdir: /applications/backend/
+  
+
+- name: Deleting PM2 Process
+  shell: pm2 delete ecosystem.config.js
+  args:
+    chdir: /applications/backend/
+  
+  
+    
+
+- name: Restart Backend API
+  shell: pm2 start
+  args:
+    chdir: /applications/backend/ 
+  
+      
+     
